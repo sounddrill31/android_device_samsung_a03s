@@ -29,5 +29,9 @@ Rear camera 3 | 2 MP, f/2.4, (depth)
 Front camera | 5 MP, f/2.2
 
 ## Building
-Work in progress
-
+1. Clone the device tree
+```git clone https://github.com/ArcticAquila/android_device_samsung_a03s.git device/samsung/a03s```
+2. Initialize the build environment
+```. build/envsetup.sh```
+3. Choose the device
+```lunch aosp_a03s-($VARIANT)```
