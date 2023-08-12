@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk) 
 
 # Inherit device configuration
-$(call inherit-product, $(DEVICE_PATH)/device.mk)  
+$(call inherit-product, device/samsung/a03s/device.mk)  
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
