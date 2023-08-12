@@ -26,6 +26,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 ## Vendor Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="a03snnxx-user 12 SP1A.210812.016 A037FXXS3CWC7 release-keys"
+    PRIVATE_BUILD_DESC="a03snnxx-user 12 SP1A.210812.016 A037FXXU4CWG6 release-keys"
 
-BUILD_FINGERPRINT := samsung/a03snnxx/a03s:12/SP1A.210812.016/A037FXXS3CWC7:user/release-keys
+BUILD_FINGERPRINT := samsung/a03snnxx/a03s:12/SP1A.210812.016/A037FXXU4CWG6:user/release-keys

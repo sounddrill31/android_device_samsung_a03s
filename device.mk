@@ -33,7 +33,7 @@ PRODUCT_CHARACTERISTICS := phone
 
 # IORap
 PRODUCT_PRODUCT_PROPERTIES += \
-     ro.iorapd.enable=true
+    ro.iorapd.enable=true
 
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
