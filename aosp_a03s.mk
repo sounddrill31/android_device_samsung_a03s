@@ -19,8 +19,8 @@ TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := a03s
 PRODUCT_NAME := aosp_a03s
+PRODUCT_DEVICE := a03s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := Galaxy A03s
 PRODUCT_MANUFACTURER := samsung
