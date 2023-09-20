@@ -1,9 +1,3 @@
-#
-# Copyright (C) 2023 The yukiprjkt Team
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 DEVICE_PATH := device/samsung/a03s 
 
 # Inherit from those products. Most specific first.
