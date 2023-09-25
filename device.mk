@@ -1,4 +1,4 @@
-LOCAL_PATH := device/samsung/a03s
+DEVICE_PATH := device/samsung/a03s
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := true
@@ -15,7 +15,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(DEVICE_PATH)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/a03s/a03s-vendor.mk)
