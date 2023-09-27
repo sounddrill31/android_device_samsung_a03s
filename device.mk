@@ -13,9 +13,5 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
-
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/a03s/a03s-vendor.mk)
