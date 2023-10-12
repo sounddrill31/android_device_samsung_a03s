@@ -1,41 +1,30 @@
-DEVICE_PATH := device/samsung/a03s 
-
-# Inherit from the common Open Source product configuration
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk) 
 
-#
-# All components inherited here go to system_ext image
-#
-$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
-
-
 # pKVM
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
-#
-# All components inherited here go to product image
-#
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common.mk)
 
-# Inherit device configuration
-$(call inherit-product, $(DEVICE_PATH)/device.mk)  
+# Inherit from a03s device
+$(call inherit-product, device/samsung/a03s/device.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
+TARGET_BOOT_ANIMATION_RES := 1080p
 
-## Device identifier. This must come after all inclusions
-PRODUCT_NAME := aosp_a03s
 PRODUCT_DEVICE := a03s
+PRODUCT_NAME := aosp_a03s
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := Galaxy A03s
+PRODUCT_MODEL := SM-A037F
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-## Vendor Fingerprint
+PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="a03snnxx-user 12 SP1A.210812.016 A037FXXU4CWG6 release-keys"
 

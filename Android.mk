@@ -1,4 +1,5 @@
-ifneq ($(filter a03s, $(TARGET_DEVICE)),)
 LOCAL_PATH := $(call my-dir)
-include $(call all-makefiles-under,$(LOCAL_PATH))
+
+ifeq ($(TARGET_DEVICE),a03s)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
