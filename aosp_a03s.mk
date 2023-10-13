@@ -15,7 +15,7 @@ $(call inherit-product, device/samsung/a03s/device.mk)
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
-TARGET_BOOT_ANIMATION_RES := 1080p
+TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_DEVICE := a03s
 PRODUCT_NAME := aosp_a03s
