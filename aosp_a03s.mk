@@ -1,3 +1,5 @@
+DEVICE_PATH := device/samsung/a03s
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -10,12 +12,15 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 $(call inherit-product, vendor/aosp/config/common.mk)
 
 # Inherit from a03s device
-$(call inherit-product, device/samsung/a03s/device.mk)
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
 TARGET_BOOT_ANIMATION_RES := 1080
+
+# Overlay
+PRODUCT_PACKAGE_OVERLAYS :=  $(DEVICE_PATH)/overlay $(PRODUCT_PACKAGE_OVERLAYS)
 
 PRODUCT_DEVICE := a03s
 PRODUCT_NAME := aosp_a03s
