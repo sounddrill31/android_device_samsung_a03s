@@ -22,6 +22,18 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Overlay
 PRODUCT_PACKAGE_OVERLAYS :=  $(DEVICE_PATH)/overlay $(PRODUCT_PACKAGE_OVERLAYS)
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/a2dp_audio_policy_configuration.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects_sec.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects_spatializer.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration_sec.xml
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml
+    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml
+    $(LOCAL_PATH)/configs/audio/bluetooth_audio_policy_configuration.xml
+    $(LOCAL_PATH)/configs/audio/hearing_aid_audio_policy_configuration.xml
+
 PRODUCT_DEVICE := a03s
 PRODUCT_NAME := aosp_a03s
 PRODUCT_BRAND := samsung
