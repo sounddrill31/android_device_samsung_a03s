@@ -19,6 +19,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Overlay
 PRODUCT_PACKAGE_OVERLAYS :=  $(DEVICE_PATH)/overlay $(PRODUCT_PACKAGE_OVERLAYS)
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+	
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
