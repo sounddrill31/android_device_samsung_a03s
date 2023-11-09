@@ -14,12 +14,13 @@ $(call inherit-product, vendor/aosp/config/common.mk)
 # Inherit from a03s device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
+# Import some vendor files
+$(call inherit-product-if-exists, vendor/samsung/a03s/a03s-samsung.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
 TARGET_BOOT_ANIMATION_RES := 1080
-
-
 
 PRODUCT_DEVICE := a03s
 PRODUCT_NAME := aosp_a03s
