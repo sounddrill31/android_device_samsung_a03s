@@ -9,13 +9,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
 # Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from a03s device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-# Import some vendor files
+# Inherit some vendor files (if exists)
 $(call inherit-product-if-exists, vendor/samsung/a03s/a03s-samsung.mk)
+
+# Inherit keyfiles (Personal)
+($call inherit-if-exist)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
@@ -27,6 +30,8 @@ PRODUCT_NAME := aosp_a03s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A037F
 PRODUCT_MANUFACTURER := samsung
+
+TARGET_GAPPS_ARCH := arm64
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 
