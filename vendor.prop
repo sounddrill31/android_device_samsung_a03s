@@ -6,7 +6,6 @@ ro.product.vendor.name=a03snnxx
 ro.vendor.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
 ro.vendor.product.cpu.abilist32=armeabi-v7a,armeabi
 ro.vendor.product.cpu.abilist64=arm64-v8a
-ro.vndk.version=31
 ro.bionic.arch=arm64
 ro.bionic.cpu_variant=cortex-a53
 ro.bionic.2nd_arch=arm
