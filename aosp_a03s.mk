@@ -1,15 +1,27 @@
 DEVICE_PATH := device/samsung/a03s
 
 # Inherit from those products. Most specific first.
+ifneq ($(realpath $(SRC_TARGET_DIR)/product/core_64_bit.mk),)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+endif
+
+ifneq ($(realpath $(SRC_TARGET_DIR)/product/full_base_telephony.mk),)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk) 
+endif
+
+ifneq ($(realpath $(SRC_TARGET_DIR)/product/updatable_apex.mk),)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+endif
 
 # pKVM
+ifneq ($(realpath packages/modules/Virtualization/apex/product_packages.mk),)
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+endif
 
 # Inherit some common AOSP stuff.
+ifneq ($(realpath vendor/aosp/config/common_full_phone.mk),)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+endif
 
 # Inherit from a03s device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
