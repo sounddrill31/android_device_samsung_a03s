@@ -51,5 +51,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.mt6765 \
     init.mt6765.rc \
-    init.mt6765.usb.rc \
-    ueventd.rc
+    init.mt6765.usb.rc
