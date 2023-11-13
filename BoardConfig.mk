@@ -107,6 +107,7 @@ TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 180
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # VNDK
 BOARD_VNDK_VERSION := current
