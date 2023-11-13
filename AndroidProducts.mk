@@ -4,4 +4,5 @@ PRODUCT_MAKEFILES := \
 COMMON_LUNCH_CHOICES := \
     aosp_a03s-user \
     aosp_a03s-userdebug \
-    aosp_a03s-eng
+    aosp_a03s-eng \
+    aosp_a03s
