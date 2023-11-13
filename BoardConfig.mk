@@ -110,3 +110,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
 # VNDK
 BOARD_VNDK_VERSION := current
+
+# Properties
+TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
