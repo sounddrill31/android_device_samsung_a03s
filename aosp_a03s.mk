@@ -25,7 +25,10 @@ endif
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
-TARGET_BOOT_ANIMATION_RES := 1080 # The issue is some os forcing it into 1080 or full hd
+
+## DISABLED FOR NOW
+## LET THE OS PICKED UP IT AUTOMATICLY
+# TARGET_BOOT_ANIMATION_RES := 720
 
 # Product information
 PRODUCT_DEVICE := a03s
