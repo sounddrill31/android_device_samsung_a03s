@@ -113,3 +113,4 @@ BOARD_VNDK_VERSION := current
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
