@@ -113,7 +113,7 @@ TW_INCLUDE_CRYPTO := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_INITRC := \
-	$(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc
+	$(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc \
 	$(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc
 
 # VNDK
