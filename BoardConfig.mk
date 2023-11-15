@@ -110,6 +110,8 @@ TW_DEFAULT_BRIGHTNESS := 180
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 ## DISABLE FOR NOW (SEEMS BROKEN!)
 # TW_INCLUDE_CRYPTO := true
+TW_USE_TOOLBOX := true
+
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_INITRC := \
     $(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc \
