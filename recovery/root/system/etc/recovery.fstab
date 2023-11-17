@@ -2,10 +2,10 @@
 ## Dumped From Stock Recovery
 
 # <dir>        <type>    <device>                                             <options>
-/system        ext4      system                                               flags=display=system;logical
-/vendor        ext4      vendor                                               flags=display=vendor;logical
-/product       ext4      product                                              flags=display=product;logical
-/odm           ext4      odm                                                  flags=display=odm;logical
+/system        ext4      /dev/mapper/system                                   flags=display=system;logical
+/vendor        ext4      /dev/mapper/vendor                                   flags=display=vendor;logical
+/product       ext4      /dev/mapper/product                                  flags=display=product;logical
+/odm           ext4      /dev/mapper/odm                                      flags=display=odm;logical
 /boot          emmc      /dev/block/platform/bootdevice/by-name/boot          flags=display=boot
 /recovery      emmc      /dev/block/platform/bootdevice/by-name/recovery      flags=display=recovery
 /data          f2fs      /dev/block/platform/bootdevice/by-name/userdata      flags=display=data
