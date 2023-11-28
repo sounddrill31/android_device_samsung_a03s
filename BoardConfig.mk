@@ -120,24 +120,20 @@ TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_NO_REBOOT_BOOTLOADER := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_INCLUDE_NTFS_3G := true
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 180
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-
+TW_USE_TOOLBOX := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
 ## DISABLE FOR NOW (SEEMS BROKEN!)
 # TW_INCLUDE_CRYPTO := true
-TW_USE_TOOLBOX := true
 
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_INITRC := \
     $(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc \
     $(DEVICE_PATH)/recovery/root/init.recovery.samsung.rc
-
-# VNDK 
-BOARD_VNDK_VERSION := current
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
