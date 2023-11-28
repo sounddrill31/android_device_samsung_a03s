@@ -9,6 +9,7 @@ The Samsung Galaxy A03s is a low range phone from Samsung released in August 202
 - [Overview](#overview)
 - [Specifications](#specifications)
 - [Building](#building)
+- [Product](#product)
 
 ## Specifications
 Device | Samsung Galaxy A03s
@@ -30,8 +31,18 @@ Front camera | 5 MP, f/2.2
 
 ## Building
 1. Clone the device tree
-```git clone https://github.com/ArcticAquila/android_device_samsung_a03s.git device/samsung/a03s```
+```
+git clone https://github.com/ArcticAquila/android_device_samsung_a03s.git device/samsung/a03s
+```
 2. Initialize the build environment
-```. build/envsetup.sh```
+```
+source build/envsetup.sh
+```
 3. Choose the device
-```lunch aosp_a03s-($VARIANT)```
+```
+lunch aosp_a03s-($VARIANT)
+```
+
+## Product
+[TeamWin](https://github.com/ArcticAquila/Action-TWRP-Builder/releases)
+[OrangeFox](https://github.com/ArcticAquila/Action-OFRP-Builder/releases)
