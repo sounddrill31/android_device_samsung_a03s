@@ -1,11 +1,11 @@
 # For building with minimal manifest
-export ALLOW_MISSING_DEPENDENCIES := true
+export ALLOW_MISSING_DEPENDENCIES="true"
 
 # Device Information
 ## Vendor security patch date
 export VENDOR_SECURITY_PATCH="2023-06-01"
 
-# VNDK version
+## VNDK version
 export BOARD_VNDK_VERSION="current"
 
 # Building Flags
