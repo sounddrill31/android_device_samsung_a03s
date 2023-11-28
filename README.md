@@ -44,5 +44,5 @@ lunch aosp_a03s-($VARIANT)
 ```
 
 ## Product
-[TeamWin](https://github.com/ArcticAquila/Action-TWRP-Builder/releases)
-[OrangeFox](https://github.com/ArcticAquila/Action-OFRP-Builder/releases)
+- [TeamWin](https://github.com/ArcticAquila/Action-TWRP-Builder/releases)
+- [OrangeFox](https://github.com/ArcticAquila/Action-OFRP-Builder/releases)
