@@ -1,4 +1,3 @@
-
 dalvik.vm.image-dex2oat-Xms=64m
 dalvik.vm.image-dex2oat-Xmx=64m
 dalvik.vm.dex2oat-Xms=64m
@@ -44,4 +43,3 @@ debug.sf.predict_hwc_composition_strategy=0
 debug.sf.enable_transaction_tracing=false
 ro.vendor.mtk_power_off_alarm_test=1
 com.samsung.speg.disable=true
-
