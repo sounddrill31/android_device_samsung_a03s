@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2204:2023.10.1
+    steps:
+      - run:
+          name: "Install requiement tools"
+          command: "sudo apt install repo git aria2 gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig -y"
+
+      - run: 
+          name: "Clone Pixel Experience Repository"
+          command: "repo init -u https://github.com/PixelExperience/manifest -b thirteen && repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags"
+
+      - run: 
+          name: "Clone A03s device tree"
+          command: "git clone https://github.com/ArcticAquila/android_device_samsung_a03s device/samsung/a03s"
+      
+      - run:
+          name: "Starting Building"
+          command : "source build/envsetup.sh && lunch aosp_a03s-userdebug && mka bacon -j$(nproc --all)"
+      - store_artifacts:
+          path: /
