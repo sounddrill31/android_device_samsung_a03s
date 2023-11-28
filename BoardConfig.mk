@@ -100,8 +100,8 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_BOARD_PLATFORM := mt6765
 
 # VINTF
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
@@ -132,6 +132,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 180
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+
 ## DISABLE FOR NOW (SEEMS BROKEN!)
 # TW_INCLUDE_CRYPTO := true
 TW_USE_TOOLBOX := true
@@ -145,7 +146,7 @@ TARGET_RECOVERY_INITRC := \
 BOARD_VNDK_VERSION := current
 
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/system.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/product.prop
