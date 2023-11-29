@@ -10,11 +10,12 @@ export BOARD_VNDK_VERSION="current"
 
 # Building Flags
 ## OrangeFox 
-export FOX_USE_BASH_SHELL=1
-export FOX_USE_NANO_EDITOR=1
-export FOX_USE_TAR_BINARY=1
-export FOX_USE_ZIP_BINARY=1
-export FOX_VANILLA_BUILD=1
+
+#### Bloat
+#export FOX_USE_BASH_SHELL=1
+#export FOX_USE_NANO_EDITOR=1
+#export FOX_USE_TAR_BINARY=1
+#export FOX_USE_ZIP_BINARY=1
 
 # Maintancer Information
 ## Git
