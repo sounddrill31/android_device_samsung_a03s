@@ -113,7 +113,9 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Recovery 
+ifneq ($(TARGET),recovery)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+endif
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
