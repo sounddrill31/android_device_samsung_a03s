@@ -14,9 +14,8 @@ jobs:
       - run: 
           name: Install Repo
           command: |
-          export REPO=$(mktemp /tmp/repo.XXXXXXXXX)
-          curl -o ${REPO} https://storage.googleapis.com/git-repo-downloads/repo
-          install -m 755 ${REPO} ~/bin/repo
+          curl -o /tmp/repo https://storage.googleapis.com/git-repo-downloads/repo
+          install -m 755 ${REPO} /tmp/repo
 
       - run:
           name: Download Pixel Experience manifest
