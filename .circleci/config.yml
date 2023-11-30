@@ -3,22 +3,45 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: ubuntu-2204:2023.10.1
+      image: ubuntu-2204:current
+    resource_class: large
+
     steps:
-      - run:
-          name: "Install requiement tools"
-          command: "sudo apt install repo git aria2 gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig -y"
-
-      - run: 
-          name: "Clone Pixel Experience Repository"
-          command: "repo init -u https://github.com/PixelExperience/manifest -b thirteen && repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags"
-
-      - run: 
-          name: "Clone A03s device tree"
-          command: "git clone https://github.com/ArcticAquila/android_device_samsung_a03s device/samsung/a03s"
+      # Install the AOSP build dependencies
+      - run: sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig repo -y
       
-      - run:
-          name: "Starting Building"
-          command : "source build/envsetup.sh && lunch aosp_a03s-userdebug && mka bacon -j$(nproc --all)"
+      # Download Pixel Experience manifest
+      - run: repo init -u https://github.com/PixelExperience/manifest -b thirteen
+
+      # Sync it
+      - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --depth=1 -c
+
+      # Optimize disk
+      - run: rm -rfv .repo 
+
+      # Download A03s device tree
+      - run: git clone https://github.com/ArcticAquila/android_device_samsung_a03s device/samsung/a03s --depth=1
+
+      # Set up the AOSP build environment
+      - run: source build/envsetup.sh
+
+      ### PLEASE THIS IS ONLY FOR TEMPORARY
+      # Remove recovery.fstab
+      - run: echo "" > device/samsung/a03s/recovery/system/etc/recovery.fstab
+      
+      # Lunch target device
+      - run: lunch aosp_a03s-userdebug
+
+      # Build the AOSP system
+      - run: mka bacon -j$(nproc --all)
+
+      - store_artifacts: 
+          path: out/target/product/a03s/PixelExperience_a03s-13.0-20231129-1907-UNOFFICIAL.zip 
+
       - store_artifacts:
-          path: /
+          path: out/target/product/a03s/PixelExperience_a03s-13.0-20231129-1907-UNOFFICIAL.zip.sha256sum
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
