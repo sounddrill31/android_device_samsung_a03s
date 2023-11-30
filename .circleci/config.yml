@@ -7,33 +7,47 @@ jobs:
     resource_class: large
 
     steps:
-      # Install the AOSP build dependencies
-      - run: sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig repo -y
+      - run: 
+          name: Install the AOSP build dependencies
+          command: sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig repo -y
       
-      # Download Pixel Experience manifest
-      - run: repo init -u https://github.com/PixelExperience/manifest -b thirteen
+      - run: 
+          name: Download Pixel Experience manifest
+          no_output_timeout: 2h
+          command: repo init -u https://github.com/PixelExperience/manifest -b thirteen
 
-      # Sync it
-      - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --depth=1 -c
+      - run: 
+          name: Sync it
+          no_output_timeout: 24h
+          command: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --depth=1 -c
 
-      # Optimize disk
-      - run: rm -rfv .repo 
+      - run: 
+          name: Optimize Disk
+          command: rm -rfv .repo 
 
-      # Download A03s device tree
-      - run: git clone https://github.com/ArcticAquila/android_device_samsung_a03s device/samsung/a03s --depth=1
+      - run: 
+          name: Pull Samsung A03s Device Tree
+          command: git clone https://github.com/ArcticAquila/android_device_samsung_a03s device/samsung/a03s --depth=1
 
-      # Set up the AOSP build environment
-      - run: source build/envsetup.sh
+      - run: 
+          name:  Set up the AOSP build environment
+          command: source build/envsetup.sh
 
       ### PLEASE THIS IS ONLY FOR TEMPORARY
       # Remove recovery.fstab
-      - run: echo "" > device/samsung/a03s/recovery/system/etc/recovery.fstab
+      - run: 
+      name: Remove Conflict Files (TEMPORARY)
+      command: echo "" > device/samsung/a03s/recovery/system/etc/recovery.fstab
       
-      # Lunch target device
-      - run: lunch aosp_a03s-userdebug
+      - run: 
+          name: Lunch target device
+          no_output_timeout: 2h
+          command: lunch aosp_a03s-userdebug
 
-      # Build the AOSP system
-      - run: mka bacon -j$(nproc --all)
+      - run: 
+          name: Build PixelExperience
+          no_output_timeout: 7h
+          command: mka bacon -j$(nproc --all)
 
       - store_artifacts: 
           path: out/target/product/a03s/PixelExperience_a03s-13.0-20231129-1907-UNOFFICIAL.zip 
