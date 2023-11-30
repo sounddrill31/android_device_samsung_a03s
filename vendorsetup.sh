@@ -24,4 +24,4 @@ git config --global user.email "franklinazriel6942@outlook.com"
 
 ## OrangeFox
 export OF_MAINTAINER="ArcticAquila"
-export OF_MAINTAINER_AVATAR="maintancer.png"
+export OF_MAINTAINER_AVATAR="device/samsung/a03s/maintaner.png"
