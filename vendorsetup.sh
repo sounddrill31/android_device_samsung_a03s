@@ -10,6 +10,7 @@ export BOARD_VNDK_VERSION="current"
 
 # Building Flags
 ## OrangeFox 
+OF_SCREEN_H=2400
 
 #### Bloat
 #export FOX_USE_BASH_SHELL=1
