@@ -8,6 +8,7 @@ The Samsung Galaxy A03s is a low range phone from Samsung released in August 202
 ## Navigation
 - [Overview](#overview)
 - [Specifications](#specifications)
+- [Resources](#resources)
 - [Building](#building)
 - [Product](#product)
 
@@ -28,6 +29,10 @@ Rear camera 1 | 13 MP, f/2.2, (wide), AF
 Rear camera 2 | 2 MP, f/2.4, (macro)
 Rear camera 3 | 2 MP, f/2.4, (depth)
 Front camera | 5 MP, f/2.2
+
+## Resources
+- [Vendor Files](https://github.com/ArcticAquila/android_vendor_samsung_a03s)
+- [Kernel Files](https://github.com/ArcticAquila/android_kernel_samsung_a03s)
 
 ## Building
 1. Clone the device tree
