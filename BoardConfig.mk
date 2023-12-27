@@ -95,6 +95,9 @@ TARGET_COPY_OUT_SYSTEM := system
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
+ifeq ($(wildcard vendor/samsung/a03s/a03s-samsung.mk),)
+    BUILD_WITHOUT_VENDOR := true
+endif
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml

@@ -15,9 +15,7 @@ $(call inherit-product-if-exists, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Inherit some vendor files (Optional)
-ifeq ($(wildcard vendor/samsung/a03s/a03s-samsung.mk),)
-    BUILD_WITHOUT_VENDOR := true
-endif
+$(call inherit-product-if-exists, vendor/samsung/a03s/a03s-samsung.mk)
 
 # Inherit keyfiles (Personal) (Optional)
 ifneq ($(wildcard vendor/extra/product.mk),)
