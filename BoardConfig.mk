@@ -88,10 +88,10 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 BOARD_HAS_LARGE_FILESYSTEM := true
-#TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM := system
-#TARGET_COPY_OUT_ODM := odm
+TARGET_COPY_OUT_ODM := odm
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
@@ -141,7 +141,7 @@ TARGET_RECOVERY_INITRC := \
     $(DEVICE_PATH)/recovery/root/init.recovery.samsung.rc
 
 # Properties
-#TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
-#TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/odm.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/system.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/product.prop
