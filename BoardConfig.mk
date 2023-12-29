@@ -43,11 +43,11 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a03s
 
 # Kernel - prebuilt 
 
-## DEPRECATED FEATURES
-## THE ISSUE IS KERNEL ISSUE, I STILL SEARCH TO FIX IT 
-## TEMPORARY ENABLED IT
+## If the kernel source not exist, then using prebuilt kernel
+ifeq ($(wildcard kernel/samsung/a03s/Makefile),)
+    TARGET_FORCE_PREBUILT_KERNEL := true
+endif
 
-TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
