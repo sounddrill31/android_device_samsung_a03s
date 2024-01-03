@@ -24,5 +24,5 @@
 /usb-otg                    vfat        /dev/block/sda1 /dev/block/sda              flags=display="USB-OTG";storage;wipeingui;removable
 
 ### Samsung ODE
-/keydata        ext4        /dev/block/platform/bootdevice/by-name/keydata          flags=display=keydata
-/keyrefuge      f2fs        /dev/block/platform/bootdevice/by-name/keyrefuge        flags=display=keyrefuge
+#/keydata        ext4        /dev/block/platform/bootdevice/by-name/keydata          flags=display=keydata
+#/keyrefuge      f2fs        /dev/block/platform/bootdevice/by-name/keyrefuge        flags=display=keyrefuge

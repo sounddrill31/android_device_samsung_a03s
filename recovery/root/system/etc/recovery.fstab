@@ -26,5 +26,5 @@ odm             /odm                 ext4      /dev/mapper/odm               bar
 /sspm_1         emmc        /dev/block/platform/bootdevice/by-name/sspm_1           default                                                                                                     recoveryonly
 
 ### Samsung ODE
-/keydata        ext4        /dev/block/platform/bootdevice/by-name/keydata          default                                                                                                     recoveryonly
-/keyrefuge      f2fs        /dev/block/platform/bootdevice/by-name/keyrefuge        default                                                                                                     recoveryonly
+#/keydata        ext4        /dev/block/platform/bootdevice/by-name/keydata          default                                                                                                     recoveryonly
+#/keyrefuge      f2fs        /dev/block/platform/bootdevice/by-name/keyrefuge        default                                                                                                     recoveryonly
