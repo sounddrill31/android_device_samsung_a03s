@@ -8,8 +8,8 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # pKVM
 $(call inherit-product-if-exists, packages/modules/Virtualization/apex/product_packages.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product-if-exists, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common DERP stuff.
+$(call inherit-product-if-exists, vendor/derp/config/common_full_phone.mk)
 
 # Inherit from a03s device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
