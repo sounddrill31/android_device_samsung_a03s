@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_a03s.mk
+    $(LOCAL_DIR)/derp_a03s.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_a03s-user \
-    aosp_a03s-userdebug \
-    aosp_a03s-eng
+    derp_a03s-user \
+    derp_a03s-userdebug \
+    derp_a03s-eng

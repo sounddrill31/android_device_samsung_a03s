@@ -45,7 +45,7 @@ source build/envsetup.sh
 ```
 3. Choose the device
 ```
-lunch aosp_a03s-($VARIANT)
+lunch derp_a03s-($VARIANT)
 ```
 
 ## Product
